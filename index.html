@@ -391,6 +391,154 @@ footer {
   footer { padding:28px 20px; }
   .page-hdr-inner { padding:40px 20px 12px; }
 }
+
+/* POLICY */
+.policy-body {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 24px 40px 80px;
+}
+.policy-body .highlight-box {
+  background: rgba(34,197,94,0.08);
+  border-left: 4px solid #22c55e;
+  border-radius: 0 10px 10px 0;
+  padding: 18px 22px;
+  margin-bottom: 32px;
+}
+.policy-body .highlight-box strong {
+  display: block;
+  font-size: 15px;
+  color: #22c55e;
+  margin-bottom: 4px;
+}
+.policy-body .highlight-box p {
+  color: rgba(255,255,255,0.7);
+  font-size: 14px;
+  margin: 0;
+}
+.policy-body h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 26px;
+  color: var(--white);
+  margin: 32px 0 10px;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.policy-body h2::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 20px;
+  background: var(--pink);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.policy-body p {
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.75;
+  margin-bottom: 12px;
+}
+.policy-body ul {
+  list-style: none;
+  margin: 8px 0 16px;
+  padding: 0;
+}
+.policy-body ul li {
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  padding: 5px 0 5px 22px;
+  position: relative;
+  line-height: 1.6;
+}
+.policy-body ul li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #22c55e;
+  font-weight: 700;
+  font-size: 12px;
+  top: 7px;
+}
+.policy-body .pol-card {
+  background: var(--card-bg);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 12px;
+  padding: 18px 22px;
+  margin-bottom: 10px;
+}
+.policy-body .pol-card h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+.policy-body .pol-card p { margin: 0; }
+.policy-body .age-box {
+  background: rgba(251,146,60,0.08);
+  border: 1px solid rgba(251,146,60,0.25);
+  border-radius: 12px;
+  padding: 20px 22px;
+  margin: 8px 0 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+.policy-body .age-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+.policy-body .age-box h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #fb923c;
+  margin-bottom: 5px;
+}
+.policy-body .age-box p { color: rgba(251,146,60,0.75); margin: 0; }
+.policy-body .contact-box {
+  background: var(--card-bg);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 22px 26px;
+  margin-top: 8px;
+}
+.policy-body .contact-box table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.policy-body .contact-box td { padding: 7px 0; vertical-align: top; color: rgba(255,255,255,0.6); }
+.policy-body .contact-box td:first-child { width: 140px; color: rgba(255,255,255,0.35); font-weight: 600; }
+.policy-body .contact-box td:last-child { color: rgba(255,255,255,0.85); }
+.policy-body .contact-box a { color: var(--pink); text-decoration: none; }
+.policy-body .contact-box a:hover { text-decoration: underline; }
+.policy-body .pol-divider { height: 1px; background: rgba(255,255,255,0.07); margin: 36px 0; }
+.policy-body .pol-footer { font-size: 12px; color: rgba(255,255,255,0.22); text-align: center; padding-top: 20px; }
+.policy-body code {
+  background: rgba(255,255,255,0.07);
+  border-radius: 4px;
+  padding: 1px 6px;
+  font-size: 13px;
+  color: var(--pink-pale, #ffb3d9);
+  font-family: monospace;
+}
+.policy-body .app-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,0,127,0.1);
+  border: 1px solid rgba(255,0,127,0.25);
+  border-radius: 8px;
+  padding: 5px 14px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: var(--pink);
+  margin-bottom: 6px;
+}
+@media(max-width:768px) {
+  .policy-body { padding: 18px 20px 60px; }
+  .policy-body .contact-box td:first-child { width: 100px; }
+}
+
 </style>
 </head>
 <body>
@@ -401,7 +549,7 @@ footer {
     <li><a onclick="navigate('home')" data-page="home">Início</a></li>
     <li><a onclick="navigate('menu')" data-page="menu">Menu</a></li>
     <li><a onclick="navigate('matches')" data-page="matches">Jogos</a></li>
-    <li><a href="https://policy.cafeselephant.com" target="_blank" rel="noopener" data-page="policy">Policy</a></li>
+    <li><a onclick="navigate('policy')" data-page="policy">Policy</a></li>
     <li><a onclick="openApp()" class="nav-cta">Descarregar App</a></li>
   </ul>
   <button class="hamburger" onclick="toggleMobile()">
@@ -413,7 +561,7 @@ footer {
   <a onclick="navigate('home');closeMobile()" data-page="home">Início</a>
   <a onclick="navigate('menu');closeMobile()" data-page="menu">Menu</a>
   <a onclick="navigate('matches');closeMobile()" data-page="matches">Jogos</a>
-  <a href="https://policy.cafeselephant.com" target="_blank" rel="noopener">Policy</a>
+  <a onclick="navigate('policy');closeMobile()" data-page="policy">Policy</a>
   <a onclick="openApp();closeMobile()">📲 Descarregar App</a>
 </div>
 
@@ -540,7 +688,7 @@ const MENU = [{"name": "Petiscos Frios", "items": [{"name": "Pica-Pau de Novilho
 const MATCHES = [{"team1_name": "Fiorentina", "team2_name": "Lazio", "team1_icon_url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/ACF_Fiorentina.svg", "team2_icon_url": "https://upload.wikimedia.org/wikipedia/en/7/71/SS_Lazio_Badge_2019.svg", "date": "13.04.2026", "time": "20:45"}, {"team1_name": "Real Madrid", "team2_name": "Alavés", "team1_icon_url": "https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg", "team2_icon_url": "https://upload.wikimedia.org/wikipedia/en/f/f5/Deportivo_Alave%CC%81s_logo14.svg", "date": "13.04.2026", "time": "21:00"}, {"team1_name": "Athletic Bilbao", "team2_name": "Osasuna", "team1_icon_url": "https://upload.wikimedia.org/wikipedia/en/9/98/Club_Athletic_de_Bilbao_logo.svg", "team2_icon_url": "https://upload.wikimedia.org/wikipedia/en/d/db/Osasuna_logo.svg", "date": "13.04.2026", "time": "17:30"}, {"team1_name": "Liverpool", "team2_name": "Paris Saint-Germain", "team1_icon_url": "https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg", "team2_icon_url": "https://upload.wikimedia.org/wikipedia/en/a/a7/Paris_Saint-Germain_F.C..svg", "date": "14.04.2026", "time": "21:00"}, {"team1_name": "Atlético de Madrid", "team2_name": "Barcelona", "team1_icon_url": "https://upload.wikimedia.org/wikipedia/en/f/f4/Atletico_Madrid_2017_logo.svg", "team2_icon_url": "https://upload.wikimedia.org/wikipedia/en/4/47/FC_Barcelona_%28crest%29.svg", "date": "14.04.2026", "time": "21:00"}, {"team1_name": "Napoli", "team2_name": "Lazio", "team1_icon_url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/SSC_Napoli_2007.svg", "team2_icon_url": "https://upload.wikimedia.org/wikipedia/en/7/71/SS_Lazio_Badge_2019.svg", "date": "14.04.2026", "time": "16:00"}, {"team1_name": "Arsenal", "team2_name": "Sporting CP", "team1_icon_url": "https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg", "team2_icon_url": "https://upload.wikimedia.org/wikipedia/en/8/89/Sporting_CP_%28crest%29.svg", "date": "15.04.2026", "time": "21:00"}, {"team1_name": "Bayern Munique", "team2_name": "Real Madrid", "team1_icon_url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282002%E2%80%932017%29.svg", "team2_icon_url": "https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg", "date": "15.04.2026", "time": "21:00"}, {"team1_name": "AS Roma", "team2_name": "Atalanta", "team1_icon_url": "https://upload.wikimedia.org/wikipedia/en/f/f7/AS_Roma_logo_%282017%29.svg", "team2_icon_url": "https://upload.wikimedia.org/wikipedia/de/3/32/Atalanta_BC_logo_2017.svg", "date": "15.04.2026", "time": "18:45"}, {"team1_name": "Levante", "team2_name": "Getafe", "team1_icon_url": "https://upload.wikimedia.org/wikipedia/en/7/7e/Levante_UD.svg", "team2_icon_url": "https://upload.wikimedia.org/wikipedia/en/e/e1/Getafe_CF.svg", "date": "16.04.2026", "time": "21:00"}, {"team1_name": "Juventus", "team2_name": "Bologna", "team1_icon_url": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Juventus_FC_2017_icon_%28black%29.svg", "team2_icon_url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Bologna_FC_logo.svg", "date": "16.04.2026", "time": "20:45"}, {"team1_name": "Hellas Verona", "team2_name": "AC Milan", "team1_icon_url": "https://upload.wikimedia.org/wikipedia/en/3/35/Hellas_Verona_FC_logo.svg", "team2_icon_url": "https://upload.wikimedia.org/wikipedia/en/0/0c/AC_Milan.svg", "date": "16.04.2026", "time": "13:00"}, {"team1_name": "Inter Milan", "team2_name": "Cagliari", "team1_icon_url": "https://upload.wikimedia.org/wikipedia/commons/0/05/FC_Internazionale_Milano_2021.svg", "team2_icon_url": "https://upload.wikimedia.org/wikipedia/en/2/2a/Cagliari_Calcio_1920.svg", "date": "17.04.2026", "time": "20:45"}, {"team1_name": "Chelsea", "team2_name": "Manchester United", "team1_icon_url": "https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg", "team2_icon_url": "https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg", "date": "18.04.2026", "time": "17:30"}, {"team1_name": "Manchester City", "team2_name": "Arsenal", "team1_icon_url": "https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg", "team2_icon_url": "https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg", "date": "19.04.2026", "time": "16:30"}, {"team1_name": "Manchester United", "team2_name": "Liverpool", "team1_icon_url": "https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg", "team2_icon_url": "https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg", "date": "03.05.2026", "time": "15:30"}, {"team1_name": "Borussia Dortmund", "team2_name": "Bayern Munique", "team1_icon_url": "https://upload.wikimedia.org/wikipedia/commons/6/67/Borussia_Dortmund_logo.svg", "team2_icon_url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282002%E2%80%932017%29.svg", "date": "05.05.2026", "time": "20:30"}, {"team1_name": "Barcelona", "team2_name": "Real Madrid", "team1_icon_url": "https://upload.wikimedia.org/wikipedia/en/4/47/FC_Barcelona_%28crest%29.svg", "team2_icon_url": "https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg", "date": "06.05.2026", "time": "21:00"}];
 
 // ── ROUTING ──
-const ROUTES = {'home':'home','menu':'menu','matches':'matches'};
+const ROUTES = {'home':'home','menu':'menu','matches':'matches','policy':'policy'};
 
 function navigate(page) {
   if (!ROUTES[page]) page = 'home';
@@ -709,5 +857,116 @@ function formatDate(str) {
 
 initRouting();
 </script>
+
+<!-- ========== POLICY ========== -->
+<div class="page" id="page-policy">
+  <div class="page-hdr">
+    <div class="page-hdr-inner">
+      <div class="sec-label">GB 521 LTD</div>
+      <div class="sec-title">PRIVACY POLICY</div>
+      <p>Elephant Bet Cafe &nbsp;·&nbsp; com.cafe.elephantbet</p>
+    </div>
+  </div>
+
+  <div class="policy-body">
+
+    <div class="app-badge">com.cafe.elephantbet &nbsp;·&nbsp; Google Play</div>
+
+    <p style="color:rgba(255,255,255,0.35);font-size:13px;margin-bottom:28px;">
+      Effective date: April 13, 2025 &nbsp;·&nbsp; Last updated: April 13, 2025
+    </p>
+
+    <div class="highlight-box">
+      <strong>🔒 We do not collect any personal data.</strong>
+      <p>This application does not collect, store, process, or share any personal information from its users. Your privacy is fully protected.</p>
+    </div>
+
+    <h2>1. Introduction</h2>
+    <p>This Privacy Policy applies to the <strong style="color:var(--white)">Elephant Bet Cafe</strong> mobile application (Bundle ID: <code>com.cafe.elephantbet</code>), developed and operated by <strong style="color:var(--white)">GB 521 LTD</strong>.</p>
+    <p>We are committed to protecting your privacy. By using our application, you agree to the terms described in this Privacy Policy.</p>
+
+    <h2>2. Information We Collect</h2>
+    <p><strong style="color:var(--white)">Elephant Bet Cafe does not collect any personal data.</strong> Specifically, we do not collect:</p>
+    <ul>
+      <li>Names, email addresses, phone numbers, or other contact details</li>
+      <li>Location data or GPS information</li>
+      <li>Device identifiers or advertising IDs</li>
+      <li>Financial information or payment data</li>
+      <li>Browsing history or usage analytics</li>
+      <li>Camera, microphone, or media content</li>
+      <li>Any other personally identifiable information</li>
+    </ul>
+
+    <h2>3. Data Usage</h2>
+    <p>Since we do not collect any data, we do not use, process, analyze, or monetize any user data. The application functions entirely without requiring the user to provide personal information.</p>
+
+    <h2>4. Data Sharing and Disclosure</h2>
+    <p>We do not share, sell, rent, transfer, or disclose any user data to third parties — because no data is collected in the first place. There are no third-party analytics, advertising SDKs, or data brokers integrated into this application.</p>
+
+    <h2>5. Third-Party Services</h2>
+    <div class="pol-card">
+      <h3>No Third-Party Data Collection</h3>
+      <p>This application does not integrate any third-party SDKs, advertising networks, analytics tools, or social media plugins that would collect user data.</p>
+    </div>
+    <div class="pol-card">
+      <h3>Internet Connection</h3>
+      <p>The application may require an internet connection to display menu content and match schedules. This connection is used solely to retrieve content from our servers and does not involve the collection or transmission of user data.</p>
+    </div>
+
+    <h2>6. Age Restriction</h2>
+    <div class="age-box">
+      <div class="age-icon">🔞</div>
+      <div>
+        <h3>This application is intended for users aged 18 and older.</h3>
+        <p>Elephant Bet Cafe is designed exclusively for adults (18+). We do not knowingly collect data from minors. If you are under 18 years of age, you are not permitted to use this application. If we become aware that a person under 18 has accessed our application, we will take appropriate steps to restrict such access.</p>
+      </div>
+    </div>
+
+    <h2>7. Data Security</h2>
+    <p>Because we do not collect or store any personal data, there is no risk of data breach or unauthorized access to your personal information through our application. We maintain this policy as our primary security measure.</p>
+
+    <h2>8. User Rights</h2>
+    <p>Since no personal data is collected, there is no data to access, correct, export, or delete. You retain full control over your information at all times.</p>
+    <p>If you believe that our application has inadvertently collected any data, please contact us immediately at the email address below and we will investigate and respond promptly.</p>
+
+    <h2>9. Cookies and Tracking Technologies</h2>
+    <p>This application does not use cookies, web beacons, pixel tags, or any other tracking technologies to monitor user behavior or collect data.</p>
+
+    <h2>10. Changes to This Privacy Policy</h2>
+    <p>We may update this Privacy Policy from time to time to reflect changes in our practices or for legal and regulatory reasons. Any updates will be posted on this page with a revised "Last updated" date. Continued use of the application after any changes constitutes acceptance of the updated policy.</p>
+    <p>We encourage you to review this Privacy Policy periodically. Significant changes will be communicated through the application or via the Google Play Store listing.</p>
+
+    <h2>11. Compliance</h2>
+    <p>This Privacy Policy is designed to comply with:</p>
+    <ul>
+      <li>Google Play Developer Program Policies</li>
+      <li>General Data Protection Regulation (GDPR) — European Union</li>
+      <li>UK Data Protection Act 2018</li>
+      <li>California Consumer Privacy Act (CCPA)</li>
+    </ul>
+
+    <h2>12. Contact Us</h2>
+    <p>If you have any questions, concerns, or requests regarding this Privacy Policy or the application, please contact us:</p>
+    <div class="contact-box">
+      <table>
+        <tr><td>Company</td><td><strong>GB 521 LTD</strong></td></tr>
+        <tr><td>Application</td><td>Elephant Bet Cafe</td></tr>
+        <tr><td>Bundle ID</td><td><code>com.cafe.elephantbet</code></td></tr>
+        <tr><td>Email</td><td><a href="mailto:dev@cafeselephant.com">dev@cafeselephant.com</a></td></tr>
+        <tr><td>Platform</td><td>Google Play Store</td></tr>
+      </table>
+    </div>
+
+    <div class="pol-divider"></div>
+    <div class="pol-footer">© 2025 GB 521 LTD &nbsp;·&nbsp; Elephant Bet Cafe &nbsp;·&nbsp; All rights reserved<br>This privacy policy was last updated on April 13, 2025.</div>
+
+  </div>
+
+  <footer>
+    <div class="ft-brand">Elephant <span>Bet</span> Cafe</div>
+    <div class="ft-sub">Tudo começa com a tua escolha 🐘</div>
+  </footer>
+</div>
+
 </body>
 </html>

@@ -1,6 +1,7 @@
 {
   "rewrites": [
-    { "source": "/menu", "destination": "/menu/index.html" },
-    { "source": "/matches", "destination": "/matches/index.html" }
+    { "source": "/menu",    "destination": "/menu/index.html" },
+    { "source": "/matches", "destination": "/matches/index.html" },
+    { "source": "/policy",  "destination": "/policy/index.html" }
   ]
 }
